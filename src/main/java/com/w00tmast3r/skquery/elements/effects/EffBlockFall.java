@@ -1,7 +1,6 @@
 package com.w00tmast3r.skquery.elements.effects;
 
 import ch.njol.skript.Skript;
-
 import ch.njol.skript.aliases.ItemType;
 import ch.njol.skript.doc.Name;
 import ch.njol.skript.lang.Effect;
@@ -58,11 +57,7 @@ public class EffBlockFall extends Effect {
 			return;
 		for (Location location : locations.getArray(event)) {
 			for (ItemStack itemstack : item.getAll()) {
-				FallingBlock block = null;
-				if (!Skript.methodExists(Material.class, "createBlockData"))
-					block = location.getWorld().spawnFallingBlock(location, new MaterialData(itemstack.getType(), (byte) itemstack.getDurability()));
-				else
-					block = location.getWorld().spawnFallingBlock(location, itemstack.getType().createBlockData());
+				FallingBlock block = location.getWorld().spawnFallingBlock(location, itemstack.getType(), (byte) itemstack.getDurability());
 				EffSecSpawn.lastSpawned = block;
 				if (damages) {
 					try {

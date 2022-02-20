@@ -26,11 +26,9 @@ public class SimpleTypes extends AbstractTask {
 		EnumClassInfo.create(InventoryType.class, "inventorytype").register();
 		EnumClassInfo.create(DisplaySlot.class, "displayslot").register();
 		EnumClassInfo.create(MoonPhase.class, "moonphase").register();
-		EnumClassInfo.create(Particle.class, "particle").register();
 		EnumClassInfo.create(Sound.class, "sound").register();
 		EnumClassInfo.create(Art.class, "art").register();
 
-		TypeClassInfo.create(WorldBorder.class, "worldborder").register();
 		TypeClassInfo.create(ResultSet.class, "queryresult").register();
 	}
 
