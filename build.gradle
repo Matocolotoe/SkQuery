@@ -7,6 +7,10 @@ plugins {
 	id 'java'
 }
 
+tasks.withType(JavaCompile).configureEach {
+	options.compilerArgs += ["-source", "1.8", "-target", "1.8"]
+}
+
 repositories {
 	mavenCentral()
 
